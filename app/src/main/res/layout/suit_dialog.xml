@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/suit_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:paddingVertical="20sp"
+    android:paddingHorizontal="40sp"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/spades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:clickable="true"
+        android:text="Spades"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:clickable="true"
+        android:text="Hearts"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/clubs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:clickable="true"
+        android:text="Clubs"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/diamonds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:clickable="true"
+        android:text="Diamonds"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/no_trump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:clickable="true"
+        android:text="No trump"
+        android:textColor="@color/title"
+        />
+
+</LinearLayout>

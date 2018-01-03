@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="list_title_size">20sp</dimen>
+    <dimen name="list_subtitle_size">15sp</dimen>
+    <dimen name="row_height">70sp</dimen>
+    <dimen name="bottom_image_padding">20sp</dimen>
+    <dimen name="card_width">77sp</dimen>
+    <dimen name="card_height">107sp</dimen>
+    <dimen name="card_offset">-38.5sp</dimen>
+    <dimen name="card_top_offset">-53.5sp</dimen>
+    <dimen name="label_margin_top">26sp</dimen>
+    <dimen name="label_margin_end">20sp</dimen>
+    <dimen name="scrollview_margin">37.5sp</dimen>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_hand"
+    tools:context="co.vandierendonck.trionfinfc.views.HandActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:background="@color/top_bar"
+        android:weightSum="13">
+
+        <TextView
+            android:id="@+id/team1"
+            android:text="@string/team_1"
+            android:gravity="center"
+            android:paddingStart="10sp"
+            android:paddingEnd="10sp"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+
+        <TextView
+            android:id="@+id/score_team1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+        <TextView
+            android:id="@+id/trump"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/score_team2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+        <TextView
+            android:id="@+id/team2"
+            android:text="@string/team_2"
+            android:gravity="center"
+            android:paddingStart="10sp"
+            android:paddingEnd="10sp"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+    </LinearLayout>
+
+    <co.vandierendonck.trionfinfc.views.HandView
+        android:id="@+id/hand_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_marginTop="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
