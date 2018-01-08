@@ -93,6 +93,6 @@ class NfcWriteActivity : AppCompatActivity() {
             else -> 7
         }
         val messageWrittenSuccessfully = NFCUtil.createNFCMessage(content.toByte(), intent)
-        toast(if (messageWrittenSuccessfully) "Successfully written" + content.toByte().toString() + "to tag" else "Something went wrong writing " + content.toByte().toString() + " to the tag, try again")
+        toast(if (messageWrittenSuccessfully) "Successfully written " + content.toByte().toString() + " to tag" else "Something went wrong writing " + content.toByte().toString() + " to the tag, try again")
     }
 }

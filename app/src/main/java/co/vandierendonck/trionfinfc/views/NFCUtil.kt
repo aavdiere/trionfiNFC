@@ -15,7 +15,7 @@ import java.io.IOException
 class NFCUtil {
     companion object {
         fun createNFCMessage(payload: Byte, intent: Intent?) : Boolean {
-            val pathPrefix = "vandierendonck.co:nfcapp"
+            val pathPrefix = "vandierendonck.co:trionfinfc"
             val nfcRecord = NdefRecord(NdefRecord.TNF_EXTERNAL_TYPE, pathPrefix.toByteArray(), ByteArray(0), arrayOf(payload).toByteArray())
             val nfcMessage = NdefMessage(arrayOf(nfcRecord))
             intent?.let {
@@ -84,7 +84,7 @@ class NFCUtil {
 
         fun retrieveNFCMessage(intent: Intent?): Byte {
             intent?.let {
-                if (NfcAdapter.ACTION_NDEF_DISCOVERED == intent.action) {
+                if (NfcAdapter.ACTION_TECH_DISCOVERED == intent.action) {
                     val nDefMessages = getNDefMessages(intent)
                     nDefMessages[0].records?.let {
                         it.forEach {

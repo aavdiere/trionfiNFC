@@ -153,7 +153,7 @@ class HandActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        val data = NFCUtil.retrieveNFCMessage(this.intent)
+        val data = NFCUtil.retrieveNFCMessage(intent)
         extractNFC(data)
     }
 
