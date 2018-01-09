@@ -40,9 +40,9 @@
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <!--<data   android:host="ext"
+                <data   android:host="ext"
                         android:pathPrefix="/vandierendonck.co:trionfinfc"
-                        android:scheme="vnd.android.nfc" />-->
+                        android:scheme="vnd.android.nfc" />
             </intent-filter>
         </activity>
     </application>

@@ -32,6 +32,12 @@ class TrickListViewModel(application: Application, gameId: Long): AndroidViewMod
         doAsync { appDatabase.gameDao().updateGame(game) }
     }
 
+    fun updateTeamName(game: Game, teamName: String, teamId: Int) {
+        if (teamId == 0) game.team1Name = teamName
+        else game.team2Name = teamName
+        doAsync { appDatabase.gameDao().updateGame(game) }
+    }
+
     class TrickListModelFactory(private val app: Application, private val id: Long) : ViewModelProvider.NewInstanceFactory() {
         @Suppress("UNCHECKED_CAST")
         override fun <T: ViewModel?> create(modelClass: Class<T>): T {

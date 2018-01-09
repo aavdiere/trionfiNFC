@@ -93,6 +93,16 @@ class NfcWriteActivity : AppCompatActivity() {
             else -> 7
         }
         val messageWrittenSuccessfully = NFCUtil.createNFCMessage(content.toByte(), intent)
-        toast(if (messageWrittenSuccessfully) "Successfully written " + content.toByte().toString() + " to tag" else "Something went wrong writing " + content.toByte().toString() + " to the tag, try again")
+        if (messageWrittenSuccessfully) {
+            toast("Successfully written " + content.toByte().toString() + " to tag")
+            if (spinner_rank.selectedItemPosition == spinner_rank.count - 1) {
+                spinner_rank.setSelection(0)
+                spinner_suit.setSelection((spinner_suit.selectedItemPosition + 1) % spinner_suit.count)
+            } else {
+                spinner_rank.setSelection(spinner_rank.selectedItemPosition + 1)
+            }
+        } else {
+            toast("Something went wrong writing " + content.toByte().toString() + " to the tag, try again")
+        }
     }
 }

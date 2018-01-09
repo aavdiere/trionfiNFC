@@ -16,4 +16,9 @@ class Game @Ignore constructor(@ColumnInfo(name = "name") var name: String): Ide
     var score1: Int = 0
     @ColumnInfo(name = "score2")
     var score2: Int = 0
+
+    @ColumnInfo(name = "team1_name")
+    var team1Name: String = "Team 1"
+    @ColumnInfo(name = "team2_name")
+    var team2Name: String = "Team 2"
 }

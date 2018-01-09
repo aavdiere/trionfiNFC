@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import co.vandierendonck.trionfinfc.R
 import co.vandierendonck.trionfinfc.db.Trick
 import co.vandierendonck.trionfinfc.models.TrickListViewModel
@@ -40,14 +41,21 @@ class TrickActivity : AppCompatActivity() {
                     view.title.text = this@TrickActivity.getString(R.string.trick_list_title, position + 1)
                     view.subtitle.text = if (trick.winner == -1)
                         "In progress..."
-                    else
-                        "Team " +
-                                (if (trick.winner == 0) "1" else "2") +
+                    else {
+                        viewModel.getGame().value?.let {
+                            (
+                                if (trick.winner == 0)
+                                    it.team1Name
+                                else
+                                    it.team2Name
+                            ) +
                                 " (" +
                                 trick.score1.toString() +
                                 " - " +
                                 trick.score2.toString() +
                                 ")"
+                        }
+                    }
                     view.multiplier.text = if (trick.multiplier != 1)
                         "x " + trick.multiplier
                     else ""
@@ -104,6 +112,8 @@ class TrickActivity : AppCompatActivity() {
             if (it != null) {
                 score_team1.text = it.score1.toString()
                 score_team2.text = it.score2.toString()
+                team1.text = it.team1Name
+                team2.text = it.team2Name
             }
         })
 
@@ -113,6 +123,27 @@ class TrickActivity : AppCompatActivity() {
             else
                 toast("Cannot create new trick when previous trick is still in progress")
         }
+
+        team1.setOnClickListener { changeTeamName(0) }
+        team2.setOnClickListener { changeTeamName(1) }
+    }
+
+    private fun changeTeamName(id: Int) {
+        alert {
+            val editText = EditText(this@TrickActivity)
+            editText.requestFocus()
+
+            title("New name")
+            customView(editText)
+
+            negativeButton(R.string.dialog_negative, { cancel() })
+            positiveButton(R.string.dialog_positive, {
+                viewModel.getGame().value?.let {
+                    viewModel.updateTeamName(it, editText.text.toString(), id)
+                    listViewAdapter.notifyDataSetChanged()
+                }
+            })
+        }.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
