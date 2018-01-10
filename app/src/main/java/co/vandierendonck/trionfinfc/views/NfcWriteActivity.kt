@@ -26,7 +26,7 @@ class NfcWriteActivity : AppCompatActivity() {
         rankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_rank.adapter = rankAdapter
 
-        val typeAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listOf("Card", "Back"))
+        val typeAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listOf("Card", "Back", "No trump"))
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_type.adapter = typeAdapter
 
@@ -72,6 +72,7 @@ class NfcWriteActivity : AppCompatActivity() {
         var content = when (spinner_type.selectedItem.toString()) {
             "Card" -> 0b000
             "Back" -> 0b001
+            "No trump" -> 0b010
             else -> 0b110 // denote error
         }
         content = content shl 2

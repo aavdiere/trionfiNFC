@@ -366,6 +366,14 @@ class HandActivity : AppCompatActivity() {
 
                     flashSides(R.color.green)
                 }
+                0b010 -> {
+                    if (cards.count() == 0) {
+                        viewModel.updateTrump(Suit.NONE)
+                        flashSides(R.color.green)
+                    } else {
+                        flashSides(R.color.colorAccent)
+                    }
+                }
                 0b110 -> {
                     flashSides(R.color.colorAccent, R.color.green)
                 }
