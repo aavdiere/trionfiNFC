@@ -48,4 +48,12 @@ class Card @Ignore constructor(@ColumnInfo(name = "trick_id") var trickId: Long,
             else -> 0
         }
     }
+
+    @Ignore
+    override fun equals(other: Any?): Boolean {
+        if (other is Card? && other != null) {
+            return (this.rank == other.rank) && (this.suit == other.suit)
+        }
+        return super.equals(other)
+    }
 }

@@ -318,6 +318,13 @@ class HandActivity : AppCompatActivity() {
                     } catch (e: NoSuchElementException) {
                         null
                     }
+                    lastCard?.let {
+                        val c = Card(0, 0, 0)
+                        c.suit = Suit.values()[suit]
+                        c.rank = Rank.values()[rank]
+                        if (it == c)
+                            return
+                    }
                     var newPlayerId = 0
                     var trickId = 0L
                     when {
