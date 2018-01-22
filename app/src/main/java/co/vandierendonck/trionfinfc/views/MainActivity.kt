@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                 })
 
         list.adapter = listViewAdapter
+        list.emptyView = empty_list
 
         viewModel = ViewModelProviders.of(this).get(GameListViewModel::class.java)
         viewModel.getGameList().observe(this@MainActivity, Observer {
