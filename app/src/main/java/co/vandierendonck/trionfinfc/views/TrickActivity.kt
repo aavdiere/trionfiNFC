@@ -91,6 +91,7 @@ class TrickActivity : AppCompatActivity() {
                 })
 
         list.adapter = listViewAdapter
+        list.emptyView = empty_trick_list
 
         viewModel = ViewModelProviders.of(this, TrickListViewModel.TrickListModelFactory(this.application, gameId)).get(TrickListViewModel::class.java)
         viewModel.getTrickList().observe(this@TrickActivity, Observer {
