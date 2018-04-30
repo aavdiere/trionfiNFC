@@ -11,4 +11,6 @@
     <string name="title_activity_nfc_write">NfcWriteActivity</string>
     <string name="write_nfc_tag">Write NFC</string>
     <string name="add_button">Add</string>
+    <string name="pref_stay_awake">Stay awake</string>
+    <string name="pref_stay_awake_sum">Screen will always be full brightness and never time out.</string>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <CheckBoxPreference
+        android:key="pref_stay_awake"
+        android:title="@string/pref_stay_awake"
+        android:summary="@string/pref_stay_awake_sum"
+        android:defaultValue="true" />
+</android.support.v7.preference.PreferenceScreen>

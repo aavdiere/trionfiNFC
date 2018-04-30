@@ -19,6 +19,9 @@ import kotlinx.android.synthetic.main.list_row.view.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import android.content.Intent
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: GameListViewModel
@@ -113,7 +116,10 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when(item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                startActivity<SettingsActivity>()
+                return true
+            }
             R.id.action_write -> {
                 startActivity<NfcWriteActivity>()
                 true
